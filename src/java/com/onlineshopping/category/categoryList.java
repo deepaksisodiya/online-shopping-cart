@@ -55,7 +55,7 @@ public class categoryList extends HttpServlet {
                 bean.setCategoryid(id);
                 rd.remove(id);
             }
-            response.sendRedirect("categoryview");
+            out.println("{\"status\":\"success\"}");
         } finally {
         }
     }
