@@ -41,6 +41,7 @@ var Category = {
             url:"/categoryview",
             type:"GET",
             success: function(data){
+                self.categoryList = data;
                 self.renderData(data);
             },
             error:function(){
@@ -67,6 +68,10 @@ var Category = {
         <div id="categorytable"></div>\
         <div id="categoryadd">\
           <div>\
+          <span>categoryid</span>\
+          <input type="text" id="categoryaddID"></input>\
+          </div>\
+          <div>\
           <span>Name</span>\
           <input type="text" id="categogyaddName"></input>\
           </div>\
@@ -90,6 +95,7 @@ var Category = {
         var self = this;
         $("#addcategory").click(
         function(){
+            self.mode = "add";
             $("#categorytable").hide();
             $("#categoryadd").show();
         });
@@ -106,24 +112,53 @@ var Category = {
         function(){
             self.deleteCategory();
         });
+
+        $("#editcategory").click(
+        function(){
+
+            var selectedId = $(".categoryCheckBox:checked").val();
+            if(selectedId === undefined){
+                alert("Please Select");
+            }else{
+                self.mode = "update";
+                $("#categorytable").hide();
+                $("#categoryadd").show();
+                self.fillData(selectedId);
+            }
+
+        });
+    },
+    fillData: function(selectedId){
+
+        $.each(this.categoryList, function(i,v){
+            if(v.id === selectedId){
+                $("#categoryaddID").val(v.id);
+                $("#categogyaddName").val(v.name);
+                $("#categogyaddDetails").val(v.details);
+            }
+        });
     },
     addCategory: function(){
-        //
         var self = this;
-
-//        var reqObj = {
-//            categoryname : $("#categogyaddName").val(),
-//            categorydetails: $("#categogyaddDetails").val()
-//        };
         var str = "categoryname=" + $("#categogyaddName").val() + "&categorydetails=" + $("#categogyaddDetails").val();
-        
+        var url = "";
+        switch(self.mode){
+            case "add":
+                url = "/categoryList?opn=add";
+                break;
+            case "update":
+                url = "/categoryList?opn=update";
+                str = str + "&categoryid=" + $("#categoryaddID").val();
+                break;
+
+        }
         
         $.ajax({
-            url:"/categoryList?opn=add",
+            url:url,
             type:"POST",
             data: str,
             success: function(data){
-               alert("Added");
+               alert("Done");
                self.showTable();
             },
             error:function(){
