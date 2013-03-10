@@ -14,12 +14,15 @@ var Category = {
     deleteCategory: function(id){
         //http://localhost:8084/categoryList?opn=delete&categoryid=14
         var self = this;
-
+        var selectedId = $(".categoryCheckBox:checked").val();
+        if(selectedId === undefined){
+            alert("Please Select");
+        }else{
         $.ajax({
-            url:"/categoryList?opn=delete&categoryid=" + id,
+            url:"/categoryList?opn=delete&categoryid=" + selectedId,
             type:"GET",
             success: function(data){
-                
+                alert("Deleted");
             },
             error:function(){
                 alert("Error");
@@ -28,7 +31,7 @@ var Category = {
             dataType:"json"
 
         });
-
+        }
 
     },
     getCategoryFromServer: function(){
@@ -50,9 +53,9 @@ var Category = {
     },
     renderData: function(data){
         var str= '<table><tbody>\
-                <tr><th>id</th><th>name</th><th>details</th></tr>'
+                <tr><th>Select</th><th>id</th><th>name</th><th>details</th></tr>'
         $.each(data, function(i,v){
-            str = str + '<tr><td>' + v.id + '</td><td>' + v.name + '</td><td>' + v.details + '</td></tr>';
+            str = str + '<tr><td><input class="categoryCheckBox" type="checkbox" name="categoryid" value="'+ v.id +'"></td><td>' + v.id + '</td><td>' + v.name + '</td><td>' + v.details + '</td></tr>';
 
         });
         str = str + '</tbody></table>';
@@ -99,6 +102,10 @@ var Category = {
         function(){
             self.addCategory();
         });
+        $("#deleteategory").click(
+        function(){
+            self.deleteCategory();
+        });
     },
     addCategory: function(){
         //
@@ -138,8 +145,3 @@ var Category = {
 
 };
 
-$(function(){
-
-    //alert("Loaded");
-    Category.start();
-});

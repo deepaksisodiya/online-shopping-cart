@@ -60,7 +60,7 @@ public class productList extends HttpServlet {
                 bean.setProductid(id);
                 rd.remove(id);
             }
-            response.sendRedirect("productView");
+            out.println("{\"status\":\"success\"}");
         } finally {
         }
     } 
