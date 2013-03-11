@@ -49,7 +49,7 @@ public class categoryList extends HttpServlet {
                 id = Integer.parseInt(request.getParameter("categoryid"));
                 System.out.println(id);
                 bean.setCategoryid(id);
-                rd.edit(bean);
+                int result =  rd.edit(bean);
             } else if (opn.equals("delete")) {
                 id = Integer.parseInt(request.getParameter("categoryid"));
                 bean.setCategoryid(id);

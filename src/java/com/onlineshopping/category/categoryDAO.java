@@ -34,7 +34,7 @@ public class categoryDAO {
         }
     }
 
-    public void edit(categoryBean bean) {
+    public int edit(categoryBean bean) {
         try {
             if (c == null) {
                 c = ConnectionPool.getInstance();
@@ -46,10 +46,12 @@ public class categoryDAO {
             pstmt.setString(1, bean.getCategoryname());
             pstmt.setString(2, bean.getCategorydetails());
             pstmt.setInt(3, bean.getCategoryid());
-            pstmt.executeUpdate();
+            int result = pstmt.executeUpdate();
             c.putConnection(conn);
+            return result;
         } catch (Exception ex) {
             ex.printStackTrace();
+            return 0; 
         }
     }
 public String getOptions() {
