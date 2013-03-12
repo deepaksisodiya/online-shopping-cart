@@ -60,6 +60,11 @@ public class productList extends HttpServlet {
                 bean.setProductid(id);
                 rd.remove(id);
             }
+             else if (opn.equals("findid")) {
+                id = Integer.parseInt(request.getParameter("productid"));
+                bean.setProductid(id);
+                rd.find(id);
+            }
             out.println("{\"status\":\"success\"}");
         } finally {
         }

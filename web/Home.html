@@ -1,234 +1,37 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>NArendra sisodiya</title>
-<meta name="keywords" content="pink shop, store template, ecommerce, online shopping, CSS, HTML">
-<meta name="description" content="Pink Shop is a free ecommerce template provided by templatemo.com">
-<link href="Home_files/templatemo_style.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="Home_files/styles.css">
-<script language="javascript" type="text/javascript">
-function clearText(field)
-if (field.defaultValue == field.value) field.value = '';
-else if (field.value == '') field.value = field.defaultValue;
-</script>
-<script language="javascript" type="text/javascript" src="Home_files/mootools-1_002.js"></script>
-<script language="javascript" type="text/javascript" src="Home_files/mootools-1.js"></script>
-<script language="javascript" type="text/javascript" src="Home_files/slideitmoo-1.js"></script>
-<script language="javascript" type="text/javascript">
-window.addEvents({
-'domready': function(){
-new SlideItMoo({
-overallContainer: 'SlideItMoo_outer',
-elementScrolled: 'SlideItMoo_inner',
-thumbsContainer: 'SlideItMoo_items',
-itemsVisible: 5,
-elemsSlide: 3,
-duration: 200,
-itemsSelector: '.SlideItMoo_element',
-itemWidth: 140,
-showControls:1});
-}
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>jQuery UI Tabs - Default functionality</title>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="/resources/demos/style.css" />
+  <script type="text/javascript" src="./scripts/productViewH.js" ></script>
+  <script type="text/javascript" src="./scripts/register.js" ></script>
+         <script type="text/javascript" src="./scripts/login.js" ></script>
+        <script type="text/javascript" src="./scripts/loadH.js" ></script>
+<script>
+$(function() {
+$( "#tabs" ).tabs();
 });
 </script>
 </head>
 <body>
-<div id="templatemo_wrapper">
-<div id="templatemo_menu">
+<div id="tabs">
 <ul>
-            <li><a href="http://localhost:8084/Home" class="current"><span>.01</span>Home</a></li>
-            <li><a href="http://localhost:8084/aboutUs" target="_parent"><span>.02</span>About us</a></li>
-            <li><a href="http://localhost:8084/contactUs" target="_parent"><span>.03</span>Contact us</a></li>
-            <li><a href="http://localhost:8084/allproduct" target="_parent"><span>.04</span>Product</a></li>
-           
-
-        </ul>
-<!--menu-->
-<!--menu-->
-</div> <!-- end of templatemo_menu -->
-<div id="templatemo_header_bar">
-<div id="header"><div class="right"></div>
-
-                <h1><a href="#" target="_parent">
-                    <img src="Home_files/templatemo_logo.png" alt="Site Title">
-                    <span>Online  Shopping</span>
-                </a></h1>
-      </div><!--header-->
-<!--header-->
-</div> <!-- end of templatemo_header_bar -->
-<div class="cleaner"></div>
-<div id="sidebar"><div class="sidebar_top"></div><div class="sidebar_bottom"></div>
-<div class="sidebar_section">
-
-            <h2>Members</h2>
-
-            <form action="Authentication" method="post">
-                <label>Username</label>
-                <input name="username" size="20" title="username" type="text">
-                <label>Password</label>
-                <input value="" name="password" title="password" type="password">
-                <a href="http://localhost:8084/Addregister">Register</a>
-              <input name="login" value="Login" alt="Login" id="submit_btn" title="Login" type="submit">
-            </form>
-
-			<div class="cleaner"></div>
-
-		</div>
-        <!--member-->
-<!--member-->
-<div class="sidebar_section">
-
-            <h2>Discounts</h2>
-
-            <div class="image_wrapper"><a href="#" target="_parent"><img src="Home_files/7.jpeg" alt="product"></a></div>
-          <div class="discount"><span>25% off</span> | <a href="#">Read more</a></div>
-
-</div><!--discount-->
-<!--discount-->
-<!-- end of sidebar -->
+<li><a href="#tabs-1">Product list</a></li>
+<li><a href="#tabs-2">Login</a></li>
+<li><a href="#tabs-3">Register</a></li>
+</ul>
+<div id="tabs-1">
+<div id="productViewH"></div>
 </div>
-<div id="templatmeo_content">
-<div id="latest_product_gallery">
-
-        	<h2>Featured Products</h2>
-
-	    	<div style="width: 750px;" id="SlideItMoo_outer">
-                <div style="width: 700px;" id="SlideItMoo_inner">
-                    <div style="width: 1200px;" id="SlideItMoo_items">
-                        <div class="SlideItMoo_element">
-                                <a href="#">
-                                <img src="Home_files/8.jpg" alt="product 1"></a>
-
-                        </div>
-                        <div class="SlideItMoo_element">
-                                <a href="#">
-                                <img src="Home_files/9.jpeg" alt="product 2"></a>
-
-                        </div>
-                        <div class="SlideItMoo_element">
-                                <a href="#">
-                                <img src="Home_files/10.jpg" alt="product 3"></a>
-
-                        </div>
-                        <div class="SlideItMoo_element">
-                                <a href="#">
-                                <img src="Home_files/11.jpg" alt="product 4"></a>
-
-                        </div>
-                        <div class="SlideItMoo_element">
-                                <a href="#">
-                                <img src="Home_files/12.jpg" alt="product 5"></a>
-
-                        </div>
-                        <div class="SlideItMoo_element">
-                                <a href="#">
-                                <img src="Home_files/13.jpg" alt="product 6"></a>
-
-                        </div>
-                        <div class="SlideItMoo_element">
-                                <a href="#">
-                                <img src="Home_files/14.jpg" alt="product 7"></a>
-                        </div>
-                        <div class="SlideItMoo_element">
-                                <a href="#">
-                                <img src="Home_files/15.jpeg" alt="product 8"></a>
-                        </div>
-                    </div>
-                </div>
-            <div class="SlideItMoo_forward"></div><div class="SlideItMoo_back"></div></div>
-
-    	</div><!--features-->
-<!--features-->
-<!-- end of latest_content_gallery -->
- <div class="content_section">
-
-        	<h2>Welcome to Online Shop</h2>
-
-                <h3>Online Shopping is a Web Site Where You can purchase
- any things like Mobile , laptop ,Books, Cameras,Crafts,Video Games,DVD 
-and Movies,Home appliances,kitchen appliances,Television,Video 
-player,Perfumes,Personal care,RAM.Processor,Card,Mother Board etc 
-Without going to shop physically</h3>
-      </div><!--welcome-->
-<!--welcome-->
-<div class="content_section">
-	<h2>Our Products</h2>
-
-                    <div class="product_box margin_r35">
-
-	                    <h3>Motorola Droid a855</h3>
-
-                      <div class="image_wrapper"> <a href="#" target="_parent"><img src="Home_files/1.JPG" alt="product 2"></a> </div>
-
-                      <p class="price">Price:6000</p>
-                     
-                    </div>
-
-                    <div class="product_box margin_r35">
-                        <h3>Samsung SCH U960 Rogue</h3>
-
-                      <div class="image_wrapper"> <a href="#" target="_parent"><img src="Home_files/2.JPG" alt="product 3"></a> </div>
-
-                      <p class="price">Price: 5500</p>
-                       </div>
-
-                    <div class="product_box">
-                        <h3>BlackBerry Bold 9650</h3>
-
-                      <div class="image_wrapper"> <a href="#" target="_parent"><img src="Home_files/3.JPG" alt="product 4"></a> </div>
-
-                      <p class="price">Price: 12000</p>
-                       </div>
-
-                    <div class="cleaner"></div>
-
-                    <div class="product_box margin_r35">
-                        <h3>Samsung PL210 Point &amp; Shoot</h3>
-
-                      <div class="image_wrapper"> <a href="#" target="_parent"><img src="Home_files/4.jpeg" alt="product 5"></a> </div>
-
-                      <p class="price">Price: 9495</p>
-                     </div>
-
-                    <div class="product_box margin_r35">
-                        <h3>Canon EOS 550D SLR</h3>
-
-                      <div class="image_wrapper"> <a href="#" target="_parent"><img src="Home_files/5.jpeg" alt="product 6"></a> </div>
-
-                      <p class="price">Price: 38795</p>
-                    </div>
-
-                    <div class="product_box">
-                        <h3>Samsung ES9 Point &amp; Shoot</h3>
-
-                      <div class="image_wrapper"> <a href="#" target="_parent"><img src="Home_files/6.jpeg" alt="product 7"></a> </div>
-
-                      <p class="price">Price: 4200</p>
-                    </div>
-
-                    <div class="cleaner"></div>
-
-                    <div class="button_01"><a href="http://localhost:8084/allproduct">View All</a></div><!--content-->
-<!--content-->
+<div id="tabs-2">
+<div id="login"></div>
 </div>
-</div> <!-- end of templatmeo_content -->
-</div> <!-- end of templatemo_wrapper -->
-<div id="templatemo_footer_wrapper">
-<div id="templatemo_footer">
-
-    	<ul class="footer_menu">
-            <li><a href="http://localhost:8084/Home">Home</a></li>
-            <li><a href="http://localhost:8084/aboutUs" target="_parent">About us</a></li>
-            <li><a href="http://localhost:8084/contactUs" target="_parent">Contact us</a></li>
-            <li><a href="http://localhost:8084/allproduct">Product</a></li>
-           
-        </ul>
-
-        This Website is developed by<a href="http://localhost:8084/aboutdeepak"> Deepak sisodiya</a> |
-        Deepak.sisodiya@gmail.com<!--footer-->
-<!--footer-->
-</div> <!-- end of footer_wrapper -->
-<!--line below footer-->
-<!--line below footer-->
-
-
-out.close();
-</div></body></html>
+<div id="tabs-3">
+<div id="register"></div>
+</div>
+</div>
+</body>
+</html>
